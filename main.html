@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Search For School</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <!--Handle the picker-->
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap-select/1.13.6/css/bootstrap-select.css" />
+	<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap-select/1.13.6/js/bootstrap-select.js"></script>
+
+  <script src="app.js"></script>
+</head>
+<body onload="initialize()">
+	<div class="container">
+		<div class="form=group">
+			<h4>搜尋學校</h4>
+		</div>
+		<div class="row">
+            <div class="col-3"><button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#searchModal"><img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Ic_settings_48px.svg"></button></div>
+                <div class="col-3"><div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Switch Langague</label>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <table>
+      <caption>Information</caption>
+      <thead>
+          <tr>
+              <th>School Name</th>
+              <th>School District</th>
+              <th>School Finicial Type</th>
+              <th>School Webpage</th>
+          </tr>
+      </thead>
+      <tbody id="tcontent">
+      </tbody>
+
+  </table>
+
+<!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="searchModalTitle">Search Options</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <select class="selectpicker form-control" id="districtPicker" name="districtPicker" multiple data-live-search="true" data-none-selected-text="--請選擇地區--" data-live-search-placeholder="Search" multiple data-max-options="3">
+            <optgroup label="最多3項">
+              <option>九龍城區</option>
+              <option>沙田區</option>
+              <option>灣仔區</option>
+              <option>屯門區</option>
+              <option>元朗區</option>
+              <option>離島區</option>
+              <option>葵青區</option>
+              <option>北區</option>
+              <option>中西區</option>
+              <option>大埔區</option>
+              <option>西貢區</option>
+              <option>荃灣區</option>
+              <option>觀塘區</option>
+              <option>深水埗區</option>
+              <option>東區</option>
+              <option>黃大仙區</option>
+              <option>油尖旺區</option>
+              <option>南區</option>
+              <option>觀塘</option>              
+            </optgroup>
+          </select>
+
+          <select class="selectpicker form-control" id="schoolLevelPicker" name="schoolLevelPicker" multiple data-live-search="true" data-none-selected-text="--請選擇學校類型--" data-live-search-placeholder="Search" data-max-options="1">
+            <optgroup label="最多1項">
+              <option>幼稚園</option>
+              <option>幼稚園暨幼兒中心</option>
+              <option>小學</option>
+              <option>中學</option>             
+            </optgroup>
+          </select>
+
+          <select class="selectpicker form-control" id="finTypePicker" name="finTypePicker" multiple data-live-search="true" data-none-selected-text="--請選擇學校資助種類--" data-live-search-placeholder="Search" data-max-options="1">
+            <optgroup label="最多1項">
+              <option>資助</option>
+              <option>按位津貼</option>
+              <option>直接資助計劃</option>
+              <option>英基學校協會</option>
+              <option>官立</option>
+              <option>私立</option>
+              <option>私立獨立學校計劃</option>            
+            </optgroup>
+          </select>
+
+          <select class="selectpicker form-control" id="religionPicker" name="religionPicker" multiple data-live-search="true" data-none-selected-text="--請選擇學校宗教--" data-live-search-placeholder="Search" data-max-options="1">
+            <optgroup label="最多1項">
+              <option>天主教</option>
+              <option>基督教</option>
+              <option>不適用</option>
+              <option>佛教</option>
+              <option>道教</option>
+              <option>伊斯蘭教</option>
+              <option>儒釋道三教</option>
+              <option>孔教</option>
+              <option>錫克教</option>
+              <option>無</option>
+              <option>其他</option>             
+            </optgroup>
+          </select>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary"  data-dismiss="modal">Save changes</button>
+            <button type="button" class="btn btn-secondary" onclick="clearSearchOption()">Clear All</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+</html>

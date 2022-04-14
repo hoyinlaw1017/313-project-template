@@ -17,9 +17,9 @@ function getPickervalue(){
 
 //Handle the .json file
 function initialize() {
-    var status = "Hello!";
+    var status = "Greetings!";
     if (navigator.onLine) {
-        status = "Greetings!";
+        status = "Hello!";
         retrieveschoolData();
     } else {
         const localStorage = window.localStorage;
@@ -58,7 +58,7 @@ function retrieveschoolData() {
             var schoolData = JSON.parse(xhr.response).schoolData;
             displayschoolData(schoolData);
 
-            // Store contact data to localstorage
+            // Store data data to localstorage
             const localStorage = window.localStorage;
             if (localStorage) {
                 localStorage.setItem("schoolData", JSON.stringify(schoolData));
@@ -74,23 +74,23 @@ function displayschoolData(schoolData) {
     schoolData.forEach(addRow);
 }
 
-function addRow(contact) {
+function addRow(data) {
     var tcontent = document.getElementById("tcontent");
     var row = tcontent.insertRow();
 
     var nameCell = row.insertCell();
     nameCell.setAttribute('data-label', "School Name");
-    nameCell.innerHTML = contact.A;
+    nameCell.innerHTML = data.A;
 
     var districtCell = row.insertCell();
     districtCell.setAttribute('data-label', "School District");
-    districtCell.innerHTML = contact.G;
+    districtCell.innerHTML = data.G;
 
     var ftCell = row.insertCell();
     ftCell.setAttribute('data-label', "School Finicial Type");
-    ftCell.innerHTML = contact.W;
+    ftCell.innerHTML = data.W;
 
     var webpCell = row.insertCell();
     webpCell.setAttribute('data-label', "School Webpage");
-    webpCell.innerHTML = contact.AE;
+    webpCell.innerHTML = data.AE;
 }

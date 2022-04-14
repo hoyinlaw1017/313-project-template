@@ -80,7 +80,7 @@ function addRow(data) {
 
     var nameCell = row.insertCell();
     nameCell.setAttribute('data-label', "School Name");
-    nameCell.innerHTML = data.A;
+    nameCell.innerHTML = data.E;
 
     var districtCell = row.insertCell();
     districtCell.setAttribute('data-label', "School District");

@@ -84,7 +84,7 @@ function addRow(data) {
 
     var districtCell = row.insertCell();
     districtCell.setAttribute('data-label', "School District");
-    districtCell.innerHTML = data.G;
+    districtCell.innerHTML = data.U;
 
     var ftCell = row.insertCell();
     ftCell.setAttribute('data-label', "School Finicial Type");

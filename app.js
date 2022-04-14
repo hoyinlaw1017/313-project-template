@@ -17,7 +17,9 @@ function getPickervalue(){
 
 //Handle the .json file
 function initialize() {
+    var status = "Hello!";
     if (navigator.onLine) {
+        status = "Greetings!";
         retrieveschoolData();
     } else {
         const localStorage = window.localStorage;
@@ -28,6 +30,23 @@ function initialize() {
             }
         } 
     }
+
+    document.getElementById("status").innerHTML = status;
+
+    document.body.addEventListener(
+        "online",
+        function () {
+            document.getElementById("status").innerHTML = "Online";
+        },
+        false
+        );
+document.body.addEventListener(
+        "offline",
+        function () {
+            document.getElementById("status").innerHTML = "Offline";
+        },
+        false
+        );
 }
 
 function retrieveschoolData() {

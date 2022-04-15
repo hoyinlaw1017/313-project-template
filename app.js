@@ -4,15 +4,6 @@ function clearSearchOption(){
     $("#schoolLevelPicker").selectpicker('deselectAll');
     $("#finTypePicker").selectpicker('deselectAll');
     $("#religionPicker").selectpicker('deselectAll');
-
-            //To get the pickers value to do filtering
-            var dpval = $("#districtPicker").val();
-            var slpval = $("#schoolLevelPicker").val();
-            var ftpval = $("#finTypePicker").val();
-            var rpval = $("#religionPicker").val();
-            
-            console.log(`${dpval},${slpval},${ftpval},${rpval}`);
-
 }
 
 //Handle the .json file
@@ -72,6 +63,14 @@ function retrieveschoolData() {
 
 function displayschoolData(schoolData) {
     schoolData.forEach(addRow);
+                //To get the pickers value to do filtering
+                var dpval = $("#districtPicker").val();
+                var slpval = $("#schoolLevelPicker").val();
+                var ftpval = $("#finTypePicker").val();
+                var rpval = $("#religionPicker").val();
+                
+                console.log(`${dpval},${slpval},${ftpval},${rpval}`);
+    
 }
 
 function addRow(data) {

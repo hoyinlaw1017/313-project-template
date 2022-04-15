@@ -83,10 +83,10 @@ function addRow(data) {
     //filter
     var filteredResult = Object.values(data).filter(
         data =>
-        data == dpval &&
-        data == slpval &&
-        data == ftpval &&
-        data == rpval
+        data.E == dpval &&
+        data.U == slpval &&
+        data.W == ftpval &&
+        data.AE == rpval
     );
 
     console.log(`result: ${filteredResult}`);

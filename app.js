@@ -83,10 +83,10 @@ function addRow(data) {
     //filter
     var filteredResult = Object.values(data).filter(
         data =>
-        data in dpval &&
-        data in slpval &&
-        data in ftpval &&
-        data in rpval
+        data == dpval &&
+        data == slpval &&
+        data == ftpval &&
+        data == rpval
     );
        
     if (dpval.length !== null || slpval.length !== null || ftpval.length !== null || rpval.length !== null){

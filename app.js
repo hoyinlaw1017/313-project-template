@@ -89,7 +89,7 @@ function addRow(data) {
         data == rpval
     );
        
-    if (dpval.length != null || slpval.length != null || ftpval.length != null || rpval.length != null){
+    if (dpval != null || slpval != null || ftpval != null || rpval != null){
 
         nameCell.setAttribute('data-label', "School Name");
         nameCell.innerHTML = filteredResult.E;

@@ -80,19 +80,16 @@ function addRow(data) {
     var ftpval = $("#finTypePicker").val();
     var rpval = $("#religionPicker").val();
 
-    
-    if (dpval.length == 0 || slpval.length == 0 || ftpval.length == 0 || rpval.length == 0){
-        //filter
-        var filteredResult = json.data.filter(
-            data =>
-            data in dpval
-            &&
-            data in slpval
-            &&
-            data in ftpval
-            &&
-            data in rpval
-        );
+    //filter
+    var filteredResult = json.data.filter(
+        data =>
+        data in dpval &&
+        data in slpval &&
+        data in ftpval &&
+        data in rpval
+    );
+       
+    if (dpval.length === 0 || slpval.length === 0 || ftpval.length === 0 || rpval.length === 0){
 
         nameCell.setAttribute('data-label', "School Name");
         nameCell.innerHTML = filteredResult.E;

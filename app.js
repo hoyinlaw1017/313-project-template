@@ -81,7 +81,7 @@ function addRow(data) {
     var rpval = $("#religionPicker").val();
 
     //filter
-    var filteredResult = json.data.filter(
+    var filteredResult = Object.values(data).filter(
         data =>
         data in dpval &&
         data in slpval &&

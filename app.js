@@ -81,7 +81,7 @@ function addRow(data) {
     var rpval = $("#religionPicker").val();
 
     
-    if (dpval != null || slpval != null || ftpval != null || rpval != null){
+    if (dpval.length == 0 || slpval.length == 0 || ftpval.length == 0 || rpval.length == 0){
         //filter
         var filteredResult = json.data.filter(
             data =>
@@ -105,7 +105,7 @@ function addRow(data) {
     
         webpCell.setAttribute('data-label', "School Webpage");
         webpCell.innerHTML = filteredResult.AE;
-        
+
     }else{
 
         nameCell.setAttribute('data-label', "School Name");

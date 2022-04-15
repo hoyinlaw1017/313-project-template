@@ -63,6 +63,12 @@ function retrieveschoolData() {
 
 function displayschoolData(schoolData) {
     schoolData.forEach(addRow);
+        //To get the pickers value to do filtering
+        var dpval = $("#districtPicker").val();
+        var slpval = $("#schoolLevelPicker").val();
+        var ftpval = $("#finTypePicker").val();
+        var rpval = $("#religionPicker").val();
+    
 }
 
 function addRow(data) {
@@ -74,20 +80,14 @@ function addRow(data) {
     var ftCell = row.insertCell();
     var webpCell = row.insertCell();
 
-    //To get the pickers value to do filtering
-    var dpval = $("#districtPicker").val();
-    var slpval = $("#schoolLevelPicker").val();
-    var ftpval = $("#finTypePicker").val();
-    var rpval = $("#religionPicker").val();
-
     console.log(`${dpval},${slpval},${ftpval},${rpval}`);
     //filter
     var filteredResult = Object.values(data).filter(
         data =>
-        data.E == dpval &&
-        data.U == slpval &&
-        data.W == ftpval &&
-        data.AE == rpval
+        data.E === dpval &&
+        data.U === slpval &&
+        data.W === ftpval &&
+        data.AE === rpval
     );
 
     console.log(`result: ${filteredResult}`);

@@ -80,6 +80,7 @@ function addRow(data) {
     var ftpval = $("#finTypePicker").val();
     var rpval = $("#religionPicker").val();
 
+    console.log(`${dpval},${slpval},${ftpval},${rpval}`);
     //filter
     var filteredResult = Object.values(data).filter(
         data =>

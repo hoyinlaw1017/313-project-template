@@ -88,6 +88,8 @@ function addRow(data) {
         data == ftpval &&
         data == rpval
     );
+
+    console.log(`result: ${filteredResult}`);
        
     if (dpval != null || slpval != null || ftpval != null || rpval != null){
 

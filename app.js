@@ -97,7 +97,8 @@ function addRow(data) {
         webpCell.innerHTML = data.AE;
 }
 
-function filter(schoolData){ 
+function filter(schoolData){
+    
     //filter
     var filteredResult = schoolData.filter(
         data =>
@@ -109,12 +110,16 @@ function filter(schoolData){
 
     console.log(`result: ${filteredResult}`);
 
+    if (filteredResult != null){
+        document.getElementbyId('tcontent').disabled = true;
+    }
+
     filteredResult.forEach(addFilteredRow);
 }
 
 function addFilteredRow(filteredResult){
-    var tcontent = document.getElementById("tcontent");
-    var row = tcontent.insertRow();
+    var filteredcontent = document.getElementById("filteredcontent");
+    var row = filteredcontent.insertRow();
     var nameCell = row.insertCell();
     var districtCell = row.insertCell();
     var ftCell = row.insertCell();
@@ -131,4 +136,15 @@ function addFilteredRow(filteredResult){
 
     webpCell.setAttribute('data-label', "School Webpage");
     webpCell.innerHTML = filteredResult.AE;
+}
+
+function getData(){
+    const localStorage = window.localStorage;
+    if (localStorage) {
+        const schoolData = localStorage.getItem("schoolData");
+        if (schoolData) {
+                filter(JSON.parse(schoolData));
+            }
+        }
+
 }

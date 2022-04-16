@@ -89,7 +89,7 @@ function addRow(data) {
         webpCell.innerHTML = data.AE;
 }
 
-function filter(schoolData){
+function filter(data){
     //To get the pickers value to do filtering
     var dpval = $("#districtPicker").val();
     var slpval = $("#schoolLevelPicker").val();

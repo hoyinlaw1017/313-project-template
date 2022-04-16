@@ -23,7 +23,11 @@ function initialize() {
         if (localStorage) {
             const schoolData = localStorage.getItem("schoolData");
             if (schoolData) {
-                displayschoolData(JSON.parse(schoolData));
+                if (dpval != null || slpval != null || ftpval != null || rpval != null){
+                    filter(JSON.parse(schoolData));
+                }else{
+                    displayschoolData(JSON.parse(schoolData));
+                }
             }
         } 
     }
@@ -106,9 +110,18 @@ function filter(schoolData){
     );
 
     console.log(`result: ${filteredResult}`);
+
+    filteredResult.forEach(addFilteredRow);
 }
 
-    /*
+function addFilteredRow(filteredResult){
+    var tcontent = document.getElementById("tcontent");
+    var row = tcontent.insertRow();
+    var nameCell = row.insertCell();
+    var districtCell = row.insertCell();
+    var ftCell = row.insertCell();
+    var webpCell = row.insertCell();
+
     nameCell.setAttribute('data-label', "School Name");
     nameCell.innerHTML = filteredResult.E;
 
@@ -120,4 +133,4 @@ function filter(schoolData){
 
     webpCell.setAttribute('data-label', "School Webpage");
     webpCell.innerHTML = filteredResult.AE;
-    */
+}

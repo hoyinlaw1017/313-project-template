@@ -86,3 +86,37 @@ function addRow(data) {
         webpCell.setAttribute('data-label', "School Webpage");
         webpCell.innerHTML = data.AE;
 }
+
+function filter(schoolData){
+    //To get the pickers value to do filtering
+    var dpval = $("#districtPicker").val();
+    var slpval = $("#schoolLevelPicker").val();
+    var ftpval = $("#finTypePicker").val();
+    var rpval = $("#religionPicker").val();
+                            
+    console.log(`${dpval},${slpval},${ftpval},${rpval}`);
+            
+    //filter
+    var filteredResult = Object.values(schoolData).filter(
+        data =>
+        data.U === dpval &&
+        data.Y === slpval &&
+        data.W === ftpval &&
+        data.AG === rpval
+    );
+
+    console.log(`result: ${filteredResult}`);
+    
+
+    nameCell.setAttribute('data-label', "School Name");
+    nameCell.innerHTML = filteredResult.E;
+
+    districtCell.setAttribute('data-label', "School District");
+    districtCell.innerHTML = filteredResult.U;
+
+    ftCell.setAttribute('data-label', "School Finicial Type");
+    ftCell.innerHTML = filteredResult.W;
+
+    webpCell.setAttribute('data-label', "School Webpage");
+    webpCell.innerHTML = filteredResult.AE;
+}

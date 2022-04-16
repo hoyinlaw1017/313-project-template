@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<body>
+    hello
+    <script>
+        var schoolData = [
+    {
+      "A": "SCHOOL NO.",
+      "B": "ENGLISH CATEGORY",
+      "C": "中文類別",
+      "D": "ENGLISH NAME",
+      "E": "中文名稱",
+      "F": "ENGLISH ADDRESS",
+      "G": "中文地址",
+      "H": "LONGITUDE",
+      "I": "經度",
+      "J": "LATITUDE",
+      "K": "緯度",
+      "L": "EASTING",
+      "M": "坐標東",
+      "N": "NORTHING",
+      "O": "坐標北",
+      "P": "STUDENTS GENDER",
+      "Q": "就讀學生性別",
+      "R": "SESSION",
+      "S": "學校授課時間",
+      "T": "DISTRICT",
+      "U": "分區",
+      "V": "FINANCE TYPE",
+      "W": "資助種類",
+      "X": "SCHOOL LEVEL",
+      "Y": "學校類型",
+      "Z": "TELEPHONE",
+      "AA": "聯絡電話",
+      "AB": "FAX NUMBER",
+      "AC": "傳真號碼",
+      "AD": "WEBSITE",
+      "AE": "網頁",
+      "AF": "RELIGION",
+      "AG": "宗教"
+    },
+    {
+      "A": "512060000223",
+      "B": "Aided Primary Schools",
+      "C": "資助小學",
+      "D": "HOLY FAMILY CANOSSIAN SCHOOL",
+      "E": "嘉諾撒聖家學校",
+      "F": "G/F 99 FUK LO TSUN ROAD KOWLOON CITY KOWLOON",
+      "G": "九龍九龍城福佬村道99號地下",
+      "H": "114.18746445",
+      "I": "114.18746445",
+      "J": "22.33101279",
+      "K": "22.33101279",
+      "L": "837359.0",
+      "M": "837359.0",
+      "N": "821330.0",
+      "O": "821330.0",
+      "P": "GIRLS",
+      "Q": "女",
+      "R": "WHOLE DAY",
+      "S": "全日",
+      "T": "KOWLOON CITY",
+      "U": "九龍城區",
+      "V": "AIDED",
+      "W": "資助",
+      "X": "PRIMARY",
+      "Y": "小學",
+      "Z": "23821035",
+      "AA": "23821035",
+      "AB": "23824406",
+      "AC": "23824406",
+      "AD": "",
+      "AE": "",
+      "AF": "CATHOLICISM",
+      "AG": "天主教"
+    }
+];
+
+console.log(Object.values(schoolData).filter(
+        data =>
+        data.U === "九龍城區" &&
+        data.Y === "小學" &&
+        data.W === "資助" &&
+        data.AG === "天主教"
+    ));
+
+
+</script>
+
+</body>
+
+
+
+</head>
+</html>
+

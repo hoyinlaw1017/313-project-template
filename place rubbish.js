@@ -18,4 +18,35 @@ if (dpval != null || slpval != null || ftpval != null || rpval != null){
         );
     
         console.log(`result: ${filteredResult}`);
+        
+        
+        if (dpval != null || slpval != null || ftpval != null || rpval != null){
+
+            nameCell.setAttribute('data-label', "School Name");
+            nameCell.innerHTML = filteredResult.E;
+        
+            districtCell.setAttribute('data-label', "School District");
+            districtCell.innerHTML = filteredResult.U;
+        
+            ftCell.setAttribute('data-label', "School Finicial Type");
+            ftCell.innerHTML = filteredResult.W;
+        
+            webpCell.setAttribute('data-label', "School Webpage");
+            webpCell.innerHTML = filteredResult.AE;
+    
+        }else{
+    
+            nameCell.setAttribute('data-label', "School Name");
+            nameCell.innerHTML = data.E;
+        
+            districtCell.setAttribute('data-label', "School District");
+            districtCell.innerHTML = data.U;
+        
+            ftCell.setAttribute('data-label', "School Finicial Type");
+            ftCell.innerHTML = data.W;
+        
+            webpCell.setAttribute('data-label', "School Webpage");
+            webpCell.innerHTML = data.AE;
+        
+        }
     

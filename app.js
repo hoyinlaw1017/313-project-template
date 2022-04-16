@@ -48,6 +48,7 @@ function retrieveschoolData() {
         if (xhr.readyState === 4) {
             var schoolData = JSON.parse(xhr.response).schoolData;
             displayschoolData(schoolData);
+            filter(schoolData);
 
             // Store data data to localstorage
             const localStorage = window.localStorage;
@@ -107,7 +108,7 @@ function filter(schoolData){
 
     console.log(`result: ${filteredResult}`);
     
-
+    /*
     nameCell.setAttribute('data-label', "School Name");
     nameCell.innerHTML = filteredResult.E;
 
@@ -119,4 +120,5 @@ function filter(schoolData){
 
     webpCell.setAttribute('data-label', "School Webpage");
     webpCell.innerHTML = filteredResult.AE;
+    */
 }

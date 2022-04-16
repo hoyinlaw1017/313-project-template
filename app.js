@@ -1,3 +1,9 @@
+//To get the pickers value to do filtering
+var dpval = $("#districtPicker").val();
+var slpval = $("#schoolLevelPicker").val();
+var ftpval = $("#finTypePicker").val();
+var rpval = $("#religionPicker").val();
+
 //Init. the search option checkboxes
 function clearSearchOption(){
     $("#districtPicker").selectpicker('deselectAll');
@@ -31,7 +37,7 @@ function initialize() {
         },
         false
         );
-document.body.addEventListener(
+    document.body.addEventListener(
         "offline",
         function () {
             document.getElementById("status").innerHTML = "Offline";
@@ -62,7 +68,6 @@ function retrieveschoolData() {
 }
 
 function displayschoolData(schoolData) {
-    filter(schoolData);
     schoolData.forEach(addRow);    
 }
 
@@ -87,18 +92,10 @@ function addRow(data) {
         webpCell.innerHTML = data.AE;
 }
 
-function getPickerVal(){
-    //To get the pickers value to do filtering
-    var dpval = $("#districtPicker").val();
-    var slpval = $("#schoolLevelPicker").val();
-    var ftpval = $("#finTypePicker").val();
-    var rpval = $("#religionPicker").val();
-                            
-    console.log(`${dpval},${slpval},${ftpval},${rpval}`);
-}
-
 function filter(schoolData){
-    getPickerVal();
+                                
+    console.log(`${dpval},${slpval},${ftpval},${rpval}`);    
+
     //filter
     var filteredResult = schoolData.filter(
         data =>

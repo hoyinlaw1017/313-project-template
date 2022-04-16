@@ -62,7 +62,6 @@ function retrieveschoolData() {
 }
 
 function displayschoolData(schoolData) {
-    getPickerVal();
     filter(schoolData);
     schoolData.forEach(addRow);    
 }
@@ -99,6 +98,7 @@ function getPickerVal(){
 }
 
 function filter(schoolData){
+    getPickerVal();
     //filter
     var filteredResult = schoolData.filter(
         data =>

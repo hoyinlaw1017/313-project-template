@@ -23,9 +23,6 @@ function initialize() {
         if (localStorage) {
             const schoolData = localStorage.getItem("schoolData");
             if (schoolData) {
-                if (dpval != null || slpval != null || ftpval != null || rpval != null){
-                    filter(JSON.parse(schoolData));
-                }else{
                     displayschoolData(JSON.parse(schoolData));
                 }
             }
@@ -72,7 +69,10 @@ function retrieveschoolData() {
 }
 
 function displayschoolData(schoolData) {
-    schoolData.forEach(addRow);    
+    if (dpval != null || slpval != null || ftpval != null || rpval != null){
+        filter(schoolData);
+    } else {schoolData.forEach(addRow);
+        }    
 }
 
 function addRow(data) {

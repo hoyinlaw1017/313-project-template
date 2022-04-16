@@ -48,7 +48,6 @@ function retrieveschoolData() {
         if (xhr.readyState === 4) {
             var schoolData = JSON.parse(xhr.response).schoolData;
             displayschoolData(schoolData);
-            filter(schoolData);
 
             // Store data data to localstorage
             const localStorage = window.localStorage;
@@ -63,12 +62,12 @@ function retrieveschoolData() {
 }
 
 function displayschoolData(schoolData) {
-    console.log(`${schoolData}`);
+    getPickerVal();
+    filter(schoolData);
     schoolData.forEach(addRow);    
 }
 
 function addRow(data) {
-
     var tcontent = document.getElementById("tcontent");
     var row = tcontent.insertRow();
     var nameCell = row.insertCell();
@@ -89,7 +88,7 @@ function addRow(data) {
         webpCell.innerHTML = data.AE;
 }
 
-function filter(data){
+function getPickerVal(){
     //To get the pickers value to do filtering
     var dpval = $("#districtPicker").val();
     var slpval = $("#schoolLevelPicker").val();
@@ -97,9 +96,11 @@ function filter(data){
     var rpval = $("#religionPicker").val();
                             
     console.log(`${dpval},${slpval},${ftpval},${rpval}`);
-            
+}
+
+function filter(schoolData){
     //filter
-    var filteredResult = Object.values(schoolData).filter(
+    var filteredResult = schoolData.filter(
         data =>
         data.U === dpval &&
         data.Y === slpval &&
@@ -108,7 +109,8 @@ function filter(data){
     );
 
     console.log(`result: ${filteredResult}`);
-    
+}
+
     /*
     nameCell.setAttribute('data-label', "School Name");
     nameCell.innerHTML = filteredResult.E;
@@ -122,4 +124,3 @@ function filter(data){
     webpCell.setAttribute('data-label', "School Webpage");
     webpCell.innerHTML = filteredResult.AE;
     */
-}

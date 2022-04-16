@@ -68,7 +68,6 @@ function displayschoolData(schoolData) {
     var ftpval = $("#finTypePicker").val();
     var rpval = $("#religionPicker").val();
 
-
     if (dpval != null || slpval != null || ftpval != null || rpval != null){
         console.log(`${dpval},${slpval},${ftpval},${rpval}`); 
         filter(schoolData);
@@ -98,6 +97,12 @@ function addRow(data) {
 }
 
 function filter(schoolData){
+    //To get the pickers value to do filtering
+    var dpval = $("#districtPicker").val();
+    var slpval = $("#schoolLevelPicker").val();
+    var ftpval = $("#finTypePicker").val();
+    var rpval = $("#religionPicker").val();
+
     
     //filter
     var filteredResult = schoolData.filter(

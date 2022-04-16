@@ -48,6 +48,7 @@ function retrieveschoolData() {
         if (xhr.readyState === 4) {
             var schoolData = JSON.parse(xhr.response).schoolData;
             displayschoolData(schoolData);
+            console.log(`${schoolData}`);
             filter(schoolData);
 
             // Store data data to localstorage

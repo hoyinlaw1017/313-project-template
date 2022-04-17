@@ -105,7 +105,7 @@ table th {
         display: block;
         text-align: right;
         border-bottom: 0px;
-        height: 70px;
+        height: 60px;
     }
 
     /* Behave like a table header */
@@ -127,5 +127,5 @@ table th {
 }
 
 .model {
-    width: 10%;
+    width: 30px;
 }

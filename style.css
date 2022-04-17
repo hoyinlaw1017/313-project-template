@@ -127,6 +127,5 @@ table th {
 }
 
 .model {
-    max-width: fit-content;
-    min-width: min-content;
+    width: auto;
 }

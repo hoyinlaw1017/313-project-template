@@ -9,7 +9,6 @@ table caption {
 
 table td,
 table th {
-    width: 20ex;
     border: 1px solid #000000;
     text-align: right;
 }
@@ -47,6 +46,7 @@ table th {
         float: left;
         font-weight: bold;
         text-transform: uppercase;
+        width: 30px;
     }
 
     table td:last-child {

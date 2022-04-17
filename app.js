@@ -107,7 +107,7 @@ function filter(data){
     console.log(`length: ${filteredResult.length}`);
     //console.log(`result: ${filteredResult[0]}`);
 
-    if (filteredResult.length == 0){
+    if (filteredResult.length !== 0){
         for (var i = 0; i < filteredResult.length; i++){
             console.log(`${i}th result:
             ${filteredResult[i].E},

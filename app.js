@@ -17,7 +17,6 @@ function initialize() {
         if (localStorage) {
             const schoolData = localStorage.getItem("schoolData");
             if (schoolData) {
-                console.log(`${JSON.parse(schoolData)}`);
                     displayschoolData(JSON.parse(schoolData));
                 }
             }
@@ -69,12 +68,12 @@ function displayschoolData(schoolData) {
     var ftpval = $("#finTypePicker").val();
     var rpval = $("#religionPicker").val();
 
-    //if (dpval != null || slpval != null || ftpval != null || rpval != null){
-        //console.log(`${dpval},${slpval},${ftpval},${rpval}`); 
-        //filter(schoolData);
-    //} else {
+    if (dpval != null || slpval != null || ftpval != null || rpval != null){
+        console.log(`${dpval},${slpval},${ftpval},${rpval}`); 
+        filter(schoolData);
+    } else {
         schoolData.forEach(addRow);
-        //}    
+        }    
 }
 
 function addRow(data) {
@@ -104,7 +103,6 @@ function filter(schoolData){
     var slpval = $("#schoolLevelPicker").val();
     var ftpval = $("#finTypePicker").val();
     var rpval = $("#religionPicker").val();
-
     
     //filter
     var filteredResult = Object.values(schoolData).filter(
@@ -118,16 +116,13 @@ function filter(schoolData){
     console.log(`result: ${filteredResult}`);
 
     if (filteredResult != null){
-        var tcontent = document.getElementbyId("tcontent");
-        tcontent.disabled = true;
-    }
-
-    filteredResult.forEach(addFilteredRow);
+        filteredResult.forEach(addFilteredRow);
+    }   
 }
 
 function addFilteredRow(filteredResult){
-    var filteredcontent = document.getElementById("filteredcontent");
-    var row = filteredcontent.insertRow();
+    var tcontent = document.getElementById("tcontent");
+    var row = tcontent.insertRow();
     var nameCell = row.insertCell();
     var districtCell = row.insertCell();
     var ftCell = row.insertCell();
@@ -147,11 +142,12 @@ function addFilteredRow(filteredResult){
 }
 
 function getData(){
+    retrieveschoolData();
     const localStorage = window.localStorage;
     if (localStorage) {
         const schoolData = localStorage.getItem("schoolData");
         if (schoolData) {
-                filter(JSON.parse(schoolData));
+                displayschoolData(JSON.parse(schoolData));
             }
         }
 

@@ -96,7 +96,7 @@ function filter(schoolData){
     console.log(`Picker Value: ${dpval},${slpval},${ftpval},${rpval}`);
  
     //filter
-    var filteredResult = schoolData.filter(
+    var filteredResult = Object.values(schoolData).filter(
         data =>
         data.U === dpval &&
         data.Y === slpval &&

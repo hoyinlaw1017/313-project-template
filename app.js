@@ -116,7 +116,8 @@ function filter(schoolData){
     console.log(`result: ${filteredResult}`);
 
     if (filteredResult != null){
-        document.getElementbyId("tcontent").disabled = true;
+        var tcontent = document.getElementbyId("tcontent");
+        tcontent.disabled = true;
     }
 
     filteredResult.forEach(addFilteredRow);

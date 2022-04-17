@@ -48,7 +48,7 @@ function retrieveschoolData() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             var schoolData = JSON.parse(xhr.response).schoolData;
-            displayschoolData(schoolData);
+            //displayschoolData(schoolData);
 
             // Store data data to localstorage
             const localStorage = window.localStorage;
@@ -69,11 +69,12 @@ function displayschoolData(schoolData) {
     var ftpval = $("#finTypePicker").val();
     var rpval = $("#religionPicker").val();
 
-    if (dpval != null || slpval != null || ftpval != null || rpval != null){
-        console.log(`${dpval},${slpval},${ftpval},${rpval}`); 
-        filter(schoolData);
-    } else {schoolData.forEach(addRow);
-        }    
+    //if (dpval != null || slpval != null || ftpval != null || rpval != null){
+        //console.log(`${dpval},${slpval},${ftpval},${rpval}`); 
+        //filter(schoolData);
+    //} else {
+        schoolData.forEach(addRow);
+        //}    
 }
 
 function addRow(data) {

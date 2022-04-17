@@ -108,10 +108,9 @@ function filter(data){
 
     if (filteredResult.length !== 0){
         //remove original list
-        if ($("#tcontent")){
-            var tcontent = document.getElementById("tcontent");
-            tcontent.remove();
-        }
+
+        var originalTable = document.getElementById("originalTable");
+        originalTable.tcontent.classList.add("d-none");
 
         document.getElementById("status").innerHTML = filteredResult.length + "RESULT FOUND!!!";
 
@@ -142,7 +141,10 @@ function filter(data){
             webpCell.innerHTML = filteredResult[i].AE;       
         }
     }else{
-        document.getElementById("status").innerHTML = "NO RESULT FOUND!!!"
+        originalTable.tcontent.classList.remove("d-none");
+        document.getElementById("filteredTable").classList.add("d-none");
+
+        document.getElementById("status").innerHTML = "NO RESULT FOUND!!! Now showing the full list";
     } 
 }
 

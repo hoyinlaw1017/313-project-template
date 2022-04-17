@@ -105,7 +105,7 @@ function filter(data){
     );
 
     console.log(`length: ${filteredResult.length}`);
-    console.log(`result: ${filteredResult[0].U}`);
+    console.log(`result: ${filteredResult[0]}`);
 
     if (filteredResult.length == 0){
         //filteredResult.forEach(addFilteredRow);
@@ -141,8 +141,6 @@ function getData(){
             var parsedData = JSON.parse(schoolData);
             console.log(parsedData);
             console.log(`schoolData: ${parsedData[0].U}, ${parsedData[1].U}`);
-            //var strData = JSON.stringify(schoolData);
-            //console.log(`stringify data: ${strData[0].U}, ${strData[1].U}`);
             filter(parsedData);
         }
     }

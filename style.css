@@ -17,6 +17,9 @@ table th {
     text-transform: uppercase;
 }
 
+.model {
+    width: 200px;
+}
 
 /* The switch - the box around the slider */
 .switch {

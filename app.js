@@ -62,18 +62,7 @@ function retrieveschoolData() {
 }
 
 function displayschoolData(schoolData) {
-    //To get the pickers value to do filtering
-    var dpval = $("#districtPicker").val();
-    var slpval = $("#schoolLevelPicker").val();
-    var ftpval = $("#finTypePicker").val();
-    var rpval = $("#religionPicker").val();
-
-    if (dpval != null || slpval != null || ftpval != null || rpval != null){
-        console.log(`${dpval},${slpval},${ftpval},${rpval}`); 
-        filter(schoolData);
-    } else {
-        schoolData.forEach(addRow);
-        }    
+    schoolData.forEach(addRow);
 }
 
 function addRow(data) {
@@ -84,17 +73,17 @@ function addRow(data) {
     var ftCell = row.insertCell();
     var webpCell = row.insertCell();
 
-        nameCell.setAttribute('data-label', "School Name");
-        nameCell.innerHTML = data.E;
+    nameCell.setAttribute('data-label', "School Name");
+    nameCell.innerHTML = data.E;
     
-        districtCell.setAttribute('data-label', "School District");
-        districtCell.innerHTML = data.U;
+    districtCell.setAttribute('data-label', "School District");
+    districtCell.innerHTML = data.U;
     
-        ftCell.setAttribute('data-label', "School Finicial Type");
-        ftCell.innerHTML = data.W;
+    ftCell.setAttribute('data-label', "School Finicial Type");
+    ftCell.innerHTML = data.W;
     
-        webpCell.setAttribute('data-label', "School Webpage");
-        webpCell.innerHTML = data.AE;
+    webpCell.setAttribute('data-label', "School Webpage");
+    webpCell.innerHTML = data.AE;
 }
 
 function filter(schoolData){
@@ -142,13 +131,11 @@ function addFilteredRow(filteredResult){
 }
 
 function getData(){
-    retrieveschoolData();
     const localStorage = window.localStorage;
     if (localStorage) {
         const schoolData = localStorage.getItem("schoolData");
         if (schoolData) {
-                displayschoolData(JSON.parse(schoolData));
-            }
+            console.log(JSON.parse(schoolData));
         }
-
+    }
 }

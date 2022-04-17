@@ -120,8 +120,9 @@ table th {
     tr:nth-child(even) {
         background-color: #dddddd;
     }
-}
-
-.model {
+    
+    .model {
     width: 30px;
 }
+}
+

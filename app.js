@@ -92,7 +92,9 @@ function filter(schoolData){
     var slpval = $("#schoolLevelPicker").val();
     var ftpval = $("#finTypePicker").val();
     var rpval = $("#religionPicker").val();
-    
+
+    console.log(`Picker Value: ${dpval},${slpval},${ftpval},${rpval}`);
+ 
     //filter
     var filteredResult = schoolData.filter(
         data =>

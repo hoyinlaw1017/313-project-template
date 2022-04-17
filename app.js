@@ -17,6 +17,7 @@ function initialize() {
         if (localStorage) {
             const schoolData = localStorage.getItem("schoolData");
             if (schoolData) {
+                console.log(`${JSON.parse(schoolData)}`);
                     displayschoolData(JSON.parse(schoolData));
                 }
             }

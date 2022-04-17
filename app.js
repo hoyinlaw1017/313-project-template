@@ -105,11 +105,12 @@ function filter(data){
     );
 
     console.log(`length: ${filteredResult.length}`);
-    console.log(`result: ${filteredResult[0]}`);
+    //console.log(`result: ${filteredResult[0]}`);
 
     if (filteredResult.length == 0){
         for (var i = 0; i < filteredResult.length; i++){
-            console.log(`${i}th result: ${filteredResult[i].E},
+            console.log(`${i}th result:
+            ${filteredResult[i].E},
             ${filteredResult[i].U},
             ${filteredResult[i].W},
             ${filteredResult[i].AE}`);
@@ -145,7 +146,7 @@ function getData(){
         if (schoolData) {
             var parsedData = JSON.parse(schoolData);
             console.log(parsedData);
-            console.log(`schoolData: ${parsedData[0].U}, ${parsedData[1].U}`);
+            //console.log(`schoolData: ${parsedData[0].U}, ${parsedData[1].U}`);
             filter(parsedData);
         }
     }

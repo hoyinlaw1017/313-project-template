@@ -86,7 +86,7 @@ function addRow(data) {
     webpCell.innerHTML = data.AE;
 }
 
-function filter(schoolData){
+function filter(data){
     //To get the pickers value to do filtering
     var dpval = $("#districtPicker").val();
     var slpval = $("#schoolLevelPicker").val();
@@ -96,12 +96,12 @@ function filter(schoolData){
     console.log(`Picker Value: ${dpval},${slpval},${ftpval},${rpval}`);
  
     //filter
-    var filteredResult = Object.values(schoolData).filter(
-        data =>
-        data.U == dpval &&
-        data.Y == slpval &&
-        data.W == ftpval &&
-        data.AG == rpval
+    var filteredResult = Object.values(data).filter(
+        schoolData =>
+        schoolData.U == dpval &&
+        schoolData.Y == slpval &&
+        schoolData.W == ftpval &&
+        schoolData.AG == rpval
     );
 
     console.log(`length: ${filteredResult.length}`);
@@ -139,6 +139,7 @@ function getData(){
         const schoolData = localStorage.getItem("schoolData");
         if (schoolData) {
             console.log(JSON.parse(schoolData));
+            console.log(`schoolData length: ${schoolData.length}`);
             filter(schoolData);
         }
     }

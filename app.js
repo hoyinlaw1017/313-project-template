@@ -112,7 +112,7 @@ function filter(data){
         //hide original list
         document.getElementById("originalTable").classList.add("d-none");
         //Show result message
-        document.getElementById("status").innerHTML = filteredResult.length + "RESULT FOUND!!!";
+        document.getElementById("status").innerHTML = filteredResult.length + " RESULT FOUND!!!";
 
         //to clear the filter result list
         $("#filteredTable tr").remove();

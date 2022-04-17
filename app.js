@@ -108,7 +108,12 @@ function filter(data){
     console.log(`result: ${filteredResult[0]}`);
 
     if (filteredResult.length == 0){
-        //filteredResult.forEach(addFilteredRow);
+        for (var i = 0; i < filteredResult.length; i++){
+            console.log(`${i}th result: ${filteredResult[i].E},
+            ${filteredResult[i].U},
+            ${filteredResult[i].W},
+            ${filteredResult[i].AE}`);
+        }
     }   
 }
 

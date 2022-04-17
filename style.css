@@ -9,6 +9,7 @@ table caption {
 
 table td,
 table th {
+    width: 30ex;
     border: 1px solid #000000;
     text-align: right;
 }

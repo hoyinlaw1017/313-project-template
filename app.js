@@ -107,11 +107,12 @@ function filter(data){
     console.log(`length: ${filteredResult.length}`);
 
     if (filteredResult.length !== 0){
-        //remove original list
-
+        //hide original list
         document.getElementById("originalTable").classList.add("d-none");
-
+        //Show result message
         document.getElementById("status").innerHTML = filteredResult.length + "RESULT FOUND!!!";
+
+        $('#filteredTable > tr > td').remove();
 
         for (var i = 0; i < filteredResult.length; i++){
             console.log(`${i}th result:
@@ -120,6 +121,7 @@ function filter(data){
             ${filteredResult[i].W},
             ${filteredResult[i].AE}`);
 
+            //Add new results to rows
             var filteredContent = document.getElementById("filteredContent");
             var row = filteredContent.insertRow();
             var nameCell = row.insertCell();
@@ -140,6 +142,7 @@ function filter(data){
             webpCell.innerHTML = filteredResult[i].AE;       
         }
     }else{
+        //If No result found, show the original list and show message
         document.getElementById("originalTable").classList.remove("d-none");
         document.getElementById("filteredTable").classList.add("d-none");
 
@@ -147,34 +150,13 @@ function filter(data){
     } 
 }
 
-function addFilteredRow(filteredResult){
-    var tcontent = document.getElementById("tcontent");
-    var row = tcontent.insertRow();
-    var nameCell = row.insertCell();
-    var districtCell = row.insertCell();
-    var ftCell = row.insertCell();
-    var webpCell = row.insertCell();
-
-    nameCell.setAttribute('data-label', "School Name");
-    nameCell.innerHTML = filteredResult.E;
-
-    districtCell.setAttribute('data-label', "School District");
-    districtCell.innerHTML = filteredResult.U;
-
-    ftCell.setAttribute('data-label', "School Finicial Type");
-    ftCell.innerHTML = filteredResult.W;
-
-    webpCell.setAttribute('data-label', "School Webpage");
-    webpCell.innerHTML = filteredResult.AE;
-}
-
+//To get the data and do the filtering
 function getData(){
     const localStorage = window.localStorage;
     if (localStorage) {
         const schoolData = localStorage.getItem("schoolData");
         if (schoolData) {
             var parsedData = JSON.parse(schoolData);
-            console.log(parsedData);
             filter(parsedData);
         }
     }

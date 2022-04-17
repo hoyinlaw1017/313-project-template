@@ -50,3 +50,25 @@ if (dpval != null || slpval != null || ftpval != null || rpval != null){
         
         }
     
+
+        function addFilteredRow(filteredResult){
+            var tcontent = document.getElementById("tcontent");
+            var row = tcontent.insertRow();
+            var nameCell = row.insertCell();
+            var districtCell = row.insertCell();
+            var ftCell = row.insertCell();
+            var webpCell = row.insertCell();
+        
+            nameCell.setAttribute('data-label', "School Name");
+            nameCell.innerHTML = filteredResult.E;
+        
+            districtCell.setAttribute('data-label', "School District");
+            districtCell.innerHTML = filteredResult.U;
+        
+            ftCell.setAttribute('data-label', "School Finicial Type");
+            ftCell.innerHTML = filteredResult.W;
+        
+            webpCell.setAttribute('data-label', "School Webpage");
+            webpCell.innerHTML = filteredResult.AE;
+        }
+        

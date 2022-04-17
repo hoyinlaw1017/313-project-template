@@ -98,16 +98,16 @@ function filter(schoolData){
     //filter
     var filteredResult = Object.values(schoolData).filter(
         data =>
-        data.U === dpval &&
-        data.Y === slpval &&
-        data.W === ftpval &&
-        data.AG === rpval
+        data.U == dpval &&
+        data.Y == slpval &&
+        data.W == ftpval &&
+        data.AG == rpval
     );
 
     console.log(`length: ${filteredResult.length}`);
     console.log(`result: ${filteredResult}`);
 
-    if (filteredResult.length !== 0){
+    if (filteredResult.length == 0){
         //filteredResult.forEach(addFilteredRow);
     }   
 }

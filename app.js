@@ -140,7 +140,7 @@ function getData(){
         if (schoolData) {
             console.log(JSON.parse(schoolData));
             console.log(`schoolData: ${schoolData[0]}, ${schoolData[1]}`);
-            filter(schoolData);
+            filter(JSON.parse(schoolData));
         }
     }
 }

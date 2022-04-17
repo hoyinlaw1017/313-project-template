@@ -94,7 +94,7 @@ function filter(schoolData){
     var rpval = $("#religionPicker").val();
     
     //filter
-    var filteredResult = Object.values(schoolData).filter(
+    var filteredResult = schoolData.filter(
         data =>
         data.U === dpval &&
         data.Y === slpval &&

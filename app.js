@@ -10,7 +10,7 @@ function clearSearchOption(){
 function initialize() {
     var status = "Greetings!";
     if (navigator.onLine) {
-        status = "Hello!";
+        status = "Hello! Please click the setting icon to start search.";
         retrieveschoolData();
     } else {
         const localStorage = window.localStorage;
@@ -112,6 +112,8 @@ function filter(data){
             var tcontent = document.getElementById("tcontent");
             tcontent.remove();
         }
+
+        document.getElementById("status").innerHTML = filteredResult.length + "RESULT FOUND!!!";
 
         for (var i = 0; i < filteredResult.length; i++){
             console.log(`${i}th result:

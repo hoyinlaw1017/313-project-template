@@ -125,3 +125,8 @@ table th {
         background-color: #dddddd;
     }
 }
+
+.model {
+    max-width: fit-content;
+    min-width: min-content;
+}

@@ -126,16 +126,16 @@ function filter(data){
             var webpCell = row.insertCell();
     
             nameCell.setAttribute('data-label', "School Name");
-            nameCell.innerHTML = filteredResult.E;
+            nameCell.innerHTML = filteredResult[i].E;
         
             districtCell.setAttribute('data-label', "School District");
-            districtCell.innerHTML = filteredResult.U;
+            districtCell.innerHTML = filteredResult[i].U;
         
             ftCell.setAttribute('data-label', "School Finicial Type");
-            ftCell.innerHTML = filteredResult.W;
+            ftCell.innerHTML = filteredResult[i].W;
         
             webpCell.setAttribute('data-label', "School Webpage");
-            webpCell.innerHTML = filteredResult.AE;       
+            webpCell.innerHTML = filteredResult[i].AE;       
         }
     }else{
         document.getElementById("status").innerHTML = "NO RESULT FOUND!!!"

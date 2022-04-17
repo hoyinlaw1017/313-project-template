@@ -112,7 +112,7 @@ function filter(data){
         //Show result message
         document.getElementById("status").innerHTML = filteredResult.length + "RESULT FOUND!!!";
 
-        $('#filteredTable > tr > td').remove();
+        $("#filteredTable > tr").remove();
 
         for (var i = 0; i < filteredResult.length; i++){
             console.log(`${i}th result:

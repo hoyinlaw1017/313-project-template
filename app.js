@@ -141,6 +141,8 @@ function getData(){
             var parsedData = JSON.parse(schoolData);
             console.log(parsedData);
             console.log(`schoolData: ${parsedData[0]}, ${parsedData[1]}`);
+            var strData = JSON.stringify(schoolData);
+            console.log(`stringify data: ${strData[0]}, ${strData[1]}`);
             filter(parsedData);
         }
     }

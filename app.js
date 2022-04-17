@@ -102,10 +102,11 @@ function filter(schoolData){
         data.AG === rpval
     );
 
+    console.log(`length: ${filteredResult.length}`);
     console.log(`result: ${filteredResult}`);
 
-    if (filteredResult != null){
-        filteredResult.forEach(addFilteredRow);
+    if (filteredResult.length !== 0){
+        //filteredResult.forEach(addFilteredRow);
     }   
 }
 
@@ -136,6 +137,7 @@ function getData(){
         const schoolData = localStorage.getItem("schoolData");
         if (schoolData) {
             console.log(JSON.parse(schoolData));
+            filter(schoolData);
         }
     }
 }

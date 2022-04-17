@@ -107,6 +107,8 @@ function filter(data){
     console.log(`length: ${filteredResult.length}`);
 
     if (filteredResult.length !== 0){
+        //show filtered list
+        document.getElementById("filteredTable").classList.remove("d-none");
         //hide original list
         document.getElementById("originalTable").classList.add("d-none");
         //Show result message

@@ -139,7 +139,7 @@ function getData(){
         const schoolData = localStorage.getItem("schoolData");
         if (schoolData) {
             console.log(JSON.parse(schoolData));
-            console.log(`schoolData length: ${schoolData.length}`);
+            console.log(`schoolData: ${schoolData[0]}, ${schoolData[1]}`);
             filter(schoolData);
         }
     }

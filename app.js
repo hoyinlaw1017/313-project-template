@@ -114,6 +114,7 @@ function filter(data){
         //Show result message
         document.getElementById("status").innerHTML = filteredResult.length + "RESULT FOUND!!!";
 
+        //to clear the filter result list
         $("#filteredTable tr").remove();
 
         for (var i = 0; i < filteredResult.length; i++){

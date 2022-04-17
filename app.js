@@ -108,9 +108,11 @@ function filter(data){
 
     if (filteredResult.length !== 0){
         //remove original list
-        var tcontent = document.getElementById("tcontent");
-        tcontent.remove();
-    
+        if ($("#tcontent")){
+            var tcontent = document.getElementById("tcontent");
+            tcontent.remove();
+        }
+
         for (var i = 0; i < filteredResult.length; i++){
             console.log(`${i}th result:
             ${filteredResult[i].E},

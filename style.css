@@ -102,6 +102,7 @@ table th {
         display: block;
         text-align: right;
         border-bottom: 0px;
+        height: 10px;
     }
 
     /* Behave like a table header */

@@ -105,17 +105,41 @@ function filter(data){
     );
 
     console.log(`length: ${filteredResult.length}`);
-    //console.log(`result: ${filteredResult[0]}`);
 
     if (filteredResult.length !== 0){
+        //remove original list
+        var tcontent = document.getElementById("tcontent");
+        tcontent.remove();
+    
         for (var i = 0; i < filteredResult.length; i++){
             console.log(`${i}th result:
             ${filteredResult[i].E},
             ${filteredResult[i].U},
             ${filteredResult[i].W},
             ${filteredResult[i].AE}`);
+
+            var filteredContent = document.getElementById("filteredContent");
+            var row = filteredContent.insertRow();
+            var nameCell = row.insertCell();
+            var districtCell = row.insertCell();
+            var ftCell = row.insertCell();
+            var webpCell = row.insertCell();
+    
+            nameCell.setAttribute('data-label', "School Name");
+            nameCell.innerHTML = filteredResult.E;
+        
+            districtCell.setAttribute('data-label', "School District");
+            districtCell.innerHTML = filteredResult.U;
+        
+            ftCell.setAttribute('data-label', "School Finicial Type");
+            ftCell.innerHTML = filteredResult.W;
+        
+            webpCell.setAttribute('data-label', "School Webpage");
+            webpCell.innerHTML = filteredResult.AE;       
         }
-    }   
+    }else{
+        document.getElementById("status").innerHTML = "NO RESULT FOUND!!!"
+    } 
 }
 
 function addFilteredRow(filteredResult){
@@ -146,7 +170,6 @@ function getData(){
         if (schoolData) {
             var parsedData = JSON.parse(schoolData);
             console.log(parsedData);
-            //console.log(`schoolData: ${parsedData[0].U}, ${parsedData[1].U}`);
             filter(parsedData);
         }
     }

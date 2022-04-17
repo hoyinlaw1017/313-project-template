@@ -138,9 +138,10 @@ function getData(){
     if (localStorage) {
         const schoolData = localStorage.getItem("schoolData");
         if (schoolData) {
-            console.log(JSON.parse(schoolData));
-            console.log(`schoolData: ${schoolData[0]}, ${schoolData[1]}`);
-            filter(JSON.parse(schoolData));
+            var parsedData = JSON.parse(schoolData);
+            console.log(parsedData);
+            console.log(`schoolData: ${parsedData[0]}, ${parsedData[1]}`);
+            filter(parsedData);
         }
     }
 }

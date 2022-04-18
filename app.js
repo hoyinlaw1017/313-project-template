@@ -91,7 +91,14 @@ function addRow(data) {
     genderCell.innerHTML = data.Q;
 
     webpCell.setAttribute('data-label', "School Webpage");
-    webpCell.innerHTML = "<a href='"+data.AE+"'>網頁</a>";       
+    var webPage = data.AE;
+    if (webPage === "" || webPage === "N.A"){
+        webpCell.innerHTML = "不適用"
+    }else if(webPage === "網頁"){
+        webpCell.innerHTML = "網頁"
+    }else{
+        webpCell.innerHTML = "<a href='"+data.AE+"'>網頁</a>";
+    }
 }
 
 function filter(data){
@@ -159,7 +166,13 @@ function filter(data){
             genderCell.innerHTML = filteredResult[i].Q;
         
             webpCell.setAttribute('data-label', "School Webpage");
-            webpCell.innerHTML = "<a href='"+filteredResult[i].AE+"'>網頁</a>";  
+            var webPage = filteredResult[i].AE;
+            if (webPage === "" || webPage === "網頁" || webPage === "N.A"){
+                webpCell.innerHTML = "不適用"
+            }else{
+                webpCell.innerHTML = "<a href='"+filteredResult[i].AE+"'>網頁</a>";
+            }
+             
         }
     }else{
         //If No result found, show the original list and show message

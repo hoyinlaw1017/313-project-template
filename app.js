@@ -83,7 +83,7 @@ function addRow(data) {
     ftCell.innerHTML = data.W;
     
     webpCell.setAttribute('data-label', "School Webpage");
-    webpCell.innerHTML = data.AE;
+    webpCell.innerHTML = "<a herf="data.AE">網頁</a>";       
 }
 
 function filter(data){
@@ -142,7 +142,7 @@ function filter(data){
             ftCell.innerHTML = filteredResult[i].W;
         
             webpCell.setAttribute('data-label', "School Webpage");
-            webpCell.innerHTML = `<a herf="${filteredResult[i].AE}>網頁</a>`;       
+            webpCell.innerHTML = "<a herf="filteredResult[i].AE">網頁</a>";       
         }
     }else{
         //If No result found, show the original list and show message

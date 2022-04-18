@@ -165,7 +165,9 @@ function getData(){
     }
 }
 
+
 $(document).ready(function(){
+    //SearchBar function
     $("#myInput").on("keyup", function() {
         var value = $(this).val().toLowerCase();
         $("#originalTable tr").filter(function() {
@@ -175,4 +177,17 @@ $(document).ready(function(){
             $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
+
+    //Back to top button
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 100) { 
+            $('#scroll').fadeIn(); 
+        } else { 
+            $('#scroll').fadeOut(); 
+        } 
+    }); 
+    $('#scroll').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
 });

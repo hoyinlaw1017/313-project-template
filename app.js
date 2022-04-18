@@ -74,7 +74,7 @@ function addRow(data) {
     var ftCell = row.insertCell();
     var webpCell = row.insertCell();
 
-    levelCell.setAttribute('data-label', "Level");
+    levelCell.setAttribute('data-label', "School Level");
     levelCell.innerHTML = data.Y;
 
     nameCell.setAttribute('data-label', "School Name");

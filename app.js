@@ -72,6 +72,7 @@ function addRow(data) {
     var nameCell = row.insertCell();
     var districtCell = row.insertCell();
     var ftCell = row.insertCell();
+    var genderCell = row.insertCell();
     var webpCell = row.insertCell();
 
     levelCell.setAttribute('data-label', "School Level");
@@ -86,6 +87,9 @@ function addRow(data) {
     ftCell.setAttribute('data-label', "School Finicial Type");
     ftCell.innerHTML = data.W;
     
+    genderCell.setAttribute('data-label', "students Gender");
+    genderCell.innerHTML = data.Q;
+
     webpCell.setAttribute('data-label', "School Webpage");
     webpCell.innerHTML = "<a href='"+data.AE+"'>網頁</a>";       
 }
@@ -136,6 +140,7 @@ function filter(data){
             var nameCell = row.insertCell();
             var districtCell = row.insertCell();
             var ftCell = row.insertCell();
+            var genderCell = row.insertCell();
             var webpCell = row.insertCell();
 
             levelCell.setAttribute('data-label', "School Level");
@@ -149,6 +154,9 @@ function filter(data){
         
             ftCell.setAttribute('data-label', "School Finicial Type");
             ftCell.innerHTML = filteredResult[i].W;
+
+            genderCell.setAttribute('data-label', "Students Gender");
+            genderCell.innerHTML = filteredResult[i].Q;
         
             webpCell.setAttribute('data-label', "School Webpage");
             webpCell.innerHTML = "<a href='"+filteredResult[i].AE+"'>網頁</a>";  

@@ -142,7 +142,7 @@ function filter(data){
             ftCell.innerHTML = filteredResult[i].W;
         
             webpCell.setAttribute('data-label', "School Webpage");
-            webpCell.innerHTML = filteredResult[i].AE;       
+            webpCell.innerHTML = `<a herf="${filteredResult[i].AE}>網頁</a>`;       
         }
     }else{
         //If No result found, show the original list and show message

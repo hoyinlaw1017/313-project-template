@@ -68,10 +68,14 @@ function displayschoolData(schoolData) {
 function addRow(data) {
     var tcontent = document.getElementById("tcontent");
     var row = tcontent.insertRow();
+    var levelCell = row.insertCell();
     var nameCell = row.insertCell();
     var districtCell = row.insertCell();
     var ftCell = row.insertCell();
     var webpCell = row.insertCell();
+
+    levelCell.setAttribute('data-label', "Level");
+    levelCell.innerHTML = data.Y;
 
     nameCell.setAttribute('data-label', "School Name");
     nameCell.innerHTML = data.E;
@@ -119,7 +123,8 @@ function filter(data){
 
         for (var i = 0; i < filteredResult.length; i++){
             console.log(`${i}th result:
-            ${filteredResult[i].E},
+            ${filteredResult[i].Y},
+            ${filteredResult[i].E},            
             ${filteredResult[i].U},
             ${filteredResult[i].W},
             ${filteredResult[i].AE}`);
@@ -127,10 +132,14 @@ function filter(data){
             //Add new results to rows
             var filteredContent = document.getElementById("filteredContent");
             var row = filteredContent.insertRow();
+            var levelCell = row.insertCell();
             var nameCell = row.insertCell();
             var districtCell = row.insertCell();
             var ftCell = row.insertCell();
             var webpCell = row.insertCell();
+
+            levelCell.setAttribute('data-label', "School Level");
+            levelCell.innerHTML = filteredResult[i].Y;
     
             nameCell.setAttribute('data-label', "School Name");
             nameCell.innerHTML = filteredResult[i].E;
